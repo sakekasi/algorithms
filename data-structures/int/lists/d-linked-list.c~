@@ -1,0 +1,6 @@
+/*
+ * d-linked-list.c
+ * author: Saketh Kasibatla
+ */
+
+size_t size(d_linked_list l)
