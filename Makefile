@@ -5,4 +5,4 @@ git:
 	git commit
 
 push:
-	git push
+	git push --tags
