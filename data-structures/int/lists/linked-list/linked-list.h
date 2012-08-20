@@ -9,9 +9,9 @@ typedef struct ll_node
 {
     int value;
     struct ll_node *next;
-}
+}ll_node;
 
-typedef ll_node * linked_list;
+typedef ll_node *linked_list;
 
 /*
  *create/destroy
@@ -45,7 +45,7 @@ linked_list *insert(linked_list *, int, int);
 
 linked_list *remove_first(linked_list *);
 linked_list *remove_last(linked_list *);
-linked_list *remove(linked_list *, int);
+linked_list *remove_index(linked_list *, int);
 
 size_t size(linked_list *);
 

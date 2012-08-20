@@ -49,9 +49,9 @@ int _remove_first(linked_list *l)
     return ret;
 }
 
-void _remove_last(linked_list *l)
+int _remove_last(linked_list *l)
 {
-    ll_node *penultimate = _get_node(l, size(l)-1);
+    ll_node *penultimate = get_node(l, size(l)-1);
     ll_node *last = _get_next(penultimate);
     int ret;
     
@@ -63,9 +63,9 @@ void _remove_last(linked_list *l)
     return ret;
 }
 
-void _remove(linked_list *l, int index)
+int _remove(linked_list *l, int index)
 {
-    ll_node *before = _get_node(l, index-1);
+    ll_node *before = get_node(l, index-1);
     ll_node *current = _get_next(before);
     ll_node *after = _get_next(current);
     int ret;

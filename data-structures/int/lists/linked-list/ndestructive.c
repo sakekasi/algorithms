@@ -54,7 +54,7 @@ linked_list *remove_last(linked_list *l)
     return copy;
 }
 
-linked_list *remove(linked_list *l, int index)
+linked_list *remove_index(linked_list *l, int index)
 {
     linked_list *copy = copy_list(l);
 
