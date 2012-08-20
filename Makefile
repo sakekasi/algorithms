@@ -1,3 +1,3 @@
 git:
-	git add --all
+	git add .
 	git commit
