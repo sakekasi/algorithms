@@ -1,3 +1,5 @@
+all: git push
+
 git:
 	git add .
 	git commit
