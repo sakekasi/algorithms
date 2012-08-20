@@ -8,8 +8,12 @@
 
 #define STARTING_SIZE 256
 #define PART_SIZE sizeof(int)/sizeof(char)
+#define CHAR_BINARY_PLACES 8
 
-typedef int * hash_table;
+typedef struct {
+    int *storage;
+    size_t size;
+}hash_table;
 
 /*
  *constructors/destructors
@@ -24,6 +28,17 @@ void delete(hash_table *);
  */
 int _hash(int);
 int _key_hash(char *);
-int _key_part_hash(char *,size_t);
+int _open_hash(int);
+
+/*
+ *accessors/mutators
+ */
+void insert(hash_table *,char *, int);
+
+/*
+ *properties
+ */
+int _pph_full(hash_table *);
+
 
 #endif

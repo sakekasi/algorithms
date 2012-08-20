@@ -40,4 +40,37 @@ int _key_hash(char *str)
     return hash;
 }
 
-        
+int _hash(hash_table *h,int i)
+{
+    return floor(abs(_size(h) * sin((double) i)));
+}
+
+int _open_hash(int hash)
+{
+    return hash % 31 + 1;
+}
+
+int _size(hash_table *h)
+{
+    return h->size;
+}
+
+/*
+ *properties that it could be useful to compute for testing
+ *
+ *parts per hundred full (percent full * 100)
+ *----------------------------------------------------
+ *used to determine whether or not to resize the table
+ *
+ *key collisions per hash computation
+ *-----------------------------------
+ *used to determine the quality of hash function
+ *
+ *average relocations
+ *-------------------
+ *used to determine good parts per hundred to resize at
+ *
+ */
+
+    
+
