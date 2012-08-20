@@ -1,0 +1,62 @@
+/*
+ *ndestructive.c
+ *
+ *Non-destructive accessors and mutators.
+ *
+ *Author: Saketh Kasibatla
+ */
+
+linked_list *append(linked_list *l, int value)
+{
+    linked_list *copy = copy_list(l);
+
+    _append(copy, value);
+
+    return copy;
+}
+
+linked_list *prepend(linked_list *l, int value)
+{
+    linked_list *copy = copy_list(l);
+
+    _prepend(copy, value);
+
+    return copy;
+}
+
+linked_list *insert(linked_list *l, int index, int value)
+{
+    linked_list *copy = copy_list(l);
+
+    _insert(copy, index, value);
+
+    return copy;
+}
+
+
+linked_list *remove_first(linked_list *l)
+{
+    linked_list *copy = copy_list(l);
+
+    _remove_first(copy);
+
+    return copy;
+}
+
+linked_list *remove_last(linked_list *l)
+{
+    linked_list *copy = copy_list(l);
+
+    _remove_last(copy);
+
+    return copy;
+}
+
+linked_list *remove(linked_list *l, int index)
+{
+    linked_list *copy = copy_list(l);
+
+    _remove(copy, index);
+
+    return copy;
+}
