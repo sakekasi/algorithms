@@ -1,6 +1,8 @@
 #ifndef HASH_TABLE_H
 #define HASH_TABLE_H
 
+//TODO: thoroughly comment all c files.
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
