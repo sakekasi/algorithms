@@ -23,5 +23,4 @@ $(library) : linked-list.h
 #clean
 .PHONY : clean
 clean :
-	-rm linked-list linked-list-dbg liblinked-list.a liblinked-list.so* liblinked-list.la\
-	 $(static) *~
+	-rm linked-list linked-list-dbg liblinked-list.a liblinked-list.so* liblinked-list.la $(static) *~
