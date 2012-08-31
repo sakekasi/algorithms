@@ -14,7 +14,7 @@ int *bubble_sort(int *array, size_t num){
   int *copy;
   size_t i,j;
   
-  copy = calloc(num, sizeof(int));
+  copy =(int *) calloc(num, sizeof(int));
   memcpy(copy, array, num*sizeof(int));
 
   for(i=num;i>0;i--){

@@ -12,6 +12,7 @@ int main(int argc, char *argv[])
     int i,k,*arr;
     size_t j;
     char *lib=LIBFILE,*func,*path=NULL, *error;
+    int start=SIZE_START, end=SIZE_END, step=SIZE_STEP, tps = TRIALS_PER_SET;
 
     if(argc == 1){
         printf(USAGE);
@@ -30,6 +31,14 @@ int main(int argc, char *argv[])
             }
         }else if( !strcmp(argv[i], "-o") ){
             path = argv[++i];
+        }else if( !strcmp(argv[i], "-s") ){
+                start = atoi(argv[++i]);
+        }else if( !strcmp(argv[i], "-e") ){
+                end = atoi(argv[++i]);
+        }else if( !strcmp(argv[i], "-t") ){
+                step = atoi(argv[++i]);
+        }else if( !strcmp(argv[i], "-r") ){
+                tps = atoi(argv[++i]);
         }
     }
     
@@ -50,11 +59,12 @@ int main(int argc, char *argv[])
         exit(1);
     }
     
-    for(j=1;j<SIZE_MAX;j++){
+    for(j=start;j<end;j+=step){
+            printf("%d\n", j);
         for(i=0;i<NUM_SETS_PER_SIZE;i++){
             srand( time(NULL) );
             arr = get_array(j);
-            for(k=0;k<TRIALS_PER_SET;k++){
+            for(k=0;k<tps;k++){
                 write_to_file(j, run(arr,j,sort), path);
             }
             free(arr);
@@ -89,9 +99,9 @@ void write_to_file(size_t n, double t, char *f)
             fp = fopen(f, "w");
             fprintf(fp,"%s\n", FSTART);
         }
-    } else{
-        fprintf(fp,"%s%6d%s%6.2f%s\n", LSTART, n, LSEP, t, LSEP);
     }
+    fprintf(fp,"%s%6d%s%6.2f%s\n", LSTART, n, LSEP, t, LSEP);
+
 
 }
 
@@ -107,7 +117,7 @@ double run(int *a, size_t n, int *(*sort)(int *,size_t))
     end = clock();
     time = (double) (end - start);
 
-    free(sorted);
+//    free(sorted);
     
     return time;
 }
