@@ -84,7 +84,7 @@ void resize(hash_table *);
 int *fetch(hash_table *,char *);
 int *set(hash_table *,char *, int);
 
-//remove
+// remove
 datum *rm(hash_table *,char *);
 
 
