@@ -34,9 +34,9 @@ class RedBlackTree{
 
   void delete_helper(RBNode*);
 
-  void refactor(RBNode*); //add a find root function.
+  void refactor(RBNode*);
   RBNode* find(T);
-  void delete_refactor(RBNode*); // add a find root function.
+  void delete_refactor(RBNode*);
   void traverse_helper(RBNode*, std::ostringstream&);
   void re_root(RBNode*);
 
